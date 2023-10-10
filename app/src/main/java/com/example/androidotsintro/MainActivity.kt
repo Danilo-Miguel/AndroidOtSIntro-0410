@@ -13,11 +13,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
+        // Botão de envio de informações
         val btnEnviar = findViewById<Button>(R.id.btn_enviar)
+        // Exibir informações
         val txtResult  = findViewById<TextView>(R.id.txt_result)
+        // Inserir informações
         val edText = findViewById<EditText>(R.id.edText)
+        // Abrir nova tela
+        val abrirNovaTela = findViewById<Button>(R.id.btnNovaTela)
+
+        // Variável que armazena informaões inseridas
         val inputName = edText.text
 
+        // Botão de envio de informações
         btnEnviar.setOnClickListener{
            // txtResult.text = "Danilo de Souza Miguel"
 
@@ -29,6 +37,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+        // Botão para abrir a nova tela
+        abrirNovaTela.setOnClickListener{
 
+        }
     }
 }
