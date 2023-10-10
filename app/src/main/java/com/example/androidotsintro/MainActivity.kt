@@ -1,11 +1,13 @@
 package com.example.androidotsintro
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.androidotsintro.Result
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -29,16 +31,30 @@ class MainActivity : AppCompatActivity() {
         btnEnviar.setOnClickListener{
            // txtResult.text = "Danilo de Souza Miguel"
 
+         // Verificar se existe algo digitado no campo
             if(inputName.isBlank()){
                 edText.error = "Esse campo não pode ser vazio"
             }else{
                 txtResult.text = edText.text
-                btnEnviar.text = edText.text
             }
 
         }
         // Botão para abrir a nova tela
         abrirNovaTela.setOnClickListener{
+
+            // Conversão da informação para String
+            val nomeDigitado = edText.text.toString()
+
+            // Criação da intenção
+            val abrirNovaTela = Intent(this, Result::class.java)
+
+            // Envio da informação para a outra Activity
+            abrirNovaTela.putExtra("RESULTADO", nomeDigitado )
+
+            // Execução da intenção
+            startActivity(abrirNovaTela)
+
+
 
         }
     }
