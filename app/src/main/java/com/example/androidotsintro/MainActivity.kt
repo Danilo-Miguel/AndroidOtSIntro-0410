@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val edText = findViewById<EditText>(R.id.edText)
         // Abrir nova tela
         val abrirNovaTela = findViewById<Button>(R.id.btnNovaTela)
-
+        
         // Variável que armazena informaões inseridas
         val inputName = edText.text
 
@@ -55,7 +55,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(abrirNovaTela)
 
 
-
         }
+
+
     }
 }
